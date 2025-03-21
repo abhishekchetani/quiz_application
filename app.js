@@ -8,45 +8,6 @@ const answerButtons = document.getElementById("answer-buttons");
 let shuffledQuestions, currentQuestionIndex;
 let quizScore = 0;
 
-const questions = [
-	{
-		question: "Which of the following is a JavaScript Framework?",
-		answers: [
-			{ text: "Django", correct: false },
-			{ text: "React", correct: true },
-			{ text: "Spring", correct: false },
-			{ text: "Bootstrap", correct: false },
-		],
-	},
-	{
-		question: "Which of the following is a Version Control System?",
-		answers: [
-			{ text: "Azure", correct: false },
-			{ text: "Docker", correct: false },
-			{ text: "Git", correct: true },
-			{ text: "NPM", correct: false },
-		],
-	},
-	{
-		question: "Which of the following is a JavaScript Framework?",
-		answers: [
-			{ text: "Django", correct: false },
-			{ text: "React", correct: true },
-			{ text: "Spring", correct: false },
-			{ text: "Bootstrap", correct: false },
-		],
-	},
-	{
-		question: "Which of the following is a JavaScript Framework?",
-		answers: [
-			{ text: "Django", correct: false },
-			{ text: "React", correct: true },
-			{ text: "Spring", correct: false },
-			{ text: "Bootstrap", correct: false },
-		],
-	},
-];
-
 startButton.addEventListener("click", startQuiz);
 
 nextButton.addEventListener("click", () => {
@@ -123,3 +84,83 @@ function clearStatus(option) {
 	option.classList.remove("correct");
 	option.classList.remove("wrong");
 }
+
+const questions = [
+	{
+		question: "Which of the following is a JavaScript Framework?",
+		answers: [
+			{ text: "Django", correct: false },
+			{ text: "React", correct: true },
+			{ text: "Spring", correct: false },
+			{ text: "Bootstrap", correct: false },
+		],
+	},
+	{
+		question: "Which of the following is a Version Control System?",
+		answers: [
+			{ text: "Azure", correct: false },
+			{ text: "Docker", correct: false },
+			{ text: "Git", correct: true },
+			{ text: "NPM", correct: false },
+		],
+	},
+	{
+		question:
+			"Which of the following is the most important feature that makes Java suitable for Internet applications?",
+		answers: [
+			{ text: "Object-oriented & robust", correct: false },
+			{ text: "Portable & distributed", correct: true },
+			{ text: "Faster execution", correct: false },
+			{ text: "Simple & secure", correct: false },
+		],
+	},
+	{
+		question:
+			"Which approach of system development is easy to accommodate product changes, but not suitable for large high-risk or mission-critical projects?",
+		answers: [
+			{ text: "Agile", correct: true },
+			{ text: "Spiral", correct: false },
+			{ text: "Rapid Application Development (RAD)", correct: false },
+			{ text: "Prototype", correct: false },
+		],
+	},
+	{
+		question:
+			"Which software testing is used to check the defects in a software without executing the actual code?",
+		answers: [
+			{ text: "White Box", correct: false },
+			{ text: "Black Box", correct: false },
+			{ text: "Performance Analysis testing", correct: false },
+			{ text: "Static testing", correct: true },
+		],
+	},
+	{
+		question: "The size of the 'total length field' of IPv4 datagram is?",
+		answers: [
+			{ text: "16 bits", correct: true },
+			{ text: "32 bits", correct: false },
+			{ text: "8 bits", correct: false },
+			{ text: "4 bits", correct: false },
+		],
+	},
+	{
+		question:
+			"Indices whose search key specifies an order different from the sequential order of the file are called?",
+		answers: [
+			{ text: "Primary Indices", correct: false },
+			{ text: "Random Indices", correct: false },
+			{ text: "Secondary Indices", correct: true },
+			{ text: "Sequential Indices", correct: false },
+		],
+	},
+	{
+		question:
+			"Which of the following Multiple Access Protocols is NOT suitable for wired networks?",
+		answers: [
+			{ text: "CSMA/CD", correct: false },
+			{ text: "TDMA", correct: false },
+			{ text: "TGMA", correct: false },
+			{ text: "CSMA/CA", correct: true },
+		],
+	},
+];

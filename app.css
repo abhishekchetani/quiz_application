@@ -16,13 +16,6 @@ body {
 	align-items: center;
 }
 
-body.correct {
-	--hue: var(--hue-correct);
-}
-body.wrong {
-	--hue: var(--hue-wrong);
-}
-
 .container {
 	width: 800px;
 	max-width: 80%;
@@ -52,6 +45,13 @@ body.wrong {
 
 .btn:hover {
 	border-color: hsl(var(--hue), 100%, 60%);
+}
+
+.btn.correct {
+	--hue: var(--hue-correct);
+}
+.btn.wrong {
+	--hue: var(--hue-wrong);
 }
 
 .start-btn,

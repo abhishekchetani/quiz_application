@@ -4,6 +4,7 @@ const nextButton = document.getElementById("next-btn");
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
+const scoreDisplay = document.querySelector("#right-answers");
 
 let shuffledQuestions, currentQuestionIndex;
 let quizScore = 0;
@@ -17,11 +18,23 @@ nextButton.addEventListener("click", () => {
 
 function startQuiz() {
 	startButton.classList.add("hide");
-	shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+	// shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+	shuffledQuestions = shuffleQuestions([...questions]);
 	currentQuestionIndex = 0;
-	questionContainer.classList.remove("hide");
-	setNextQuestion();
 	quizScore = 0;
+	questionContainer.classList.remove("hide");
+	scoreDisplay.innerText = "";
+	scoreDisplay.parentElement.classList.add("hide");
+	setNextQuestion();
+}
+
+// Using Fisher-Yates Shuffle algorithm
+function shuffleQuestions(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * i + 1);
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+	return array;
 }
 
 function setNextQuestion() {
@@ -58,7 +71,8 @@ function selectAnswer(e) {
 	if (correct) {
 		quizScore++;
 	}
-	Array.from(answerButtons.children).forEach(option => {
+	const options = Array.from(answerButtons.children);
+	options.forEach(option => {
 		setStatus(option, option.dataset.correct);
 	});
 
@@ -67,8 +81,16 @@ function selectAnswer(e) {
 	} else {
 		startButton.innerText = "Restart";
 		startButton.classList.remove("hide");
+
+		questionContainer.classList.add("hide");
+		nextButton.classList.add("hide");
+
+		scoreDisplay.innerText = `🎉 Quiz Completed! Your Score: ${quizScore}/${shuffledQuestions.length}`;
+		scoreDisplay.parentElement.classList.remove("hide");
+		return;
 	}
-	document.querySelector("#right-answers").innerText = quizScore;
+	scoreDisplay.innerText = `Score: ${quizScore}`;
+	scoreDisplay.parentElement.classList.remove("hide");
 }
 
 function setStatus(option, correct) {

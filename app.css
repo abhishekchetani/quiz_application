@@ -16,6 +16,13 @@ body {
 	align-items: center;
 }
 
+body.correct {
+	--hue: var(--hue-correct);
+}
+body.wrong {
+	--hue: var(--hue-wrong);
+}
+
 .container {
 	width: 800px;
 	max-width: 80%;
@@ -73,12 +80,18 @@ body {
 }
 
 .score {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: bold;
 	text-align: center;
-	padding: 10px;
-	margin-top: 5px;
-	background-color: rgb(252, 236, 218);
-	color: rgb(87, 30, 104);
-	border-radius: 5px;
+	padding: 15px 20px;
+	margin-top: 20px;
+	background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+	color: #2d0d41;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+}
+
+.score.hide {
+	display: none;
 }

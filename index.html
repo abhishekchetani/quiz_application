@@ -19,16 +19,33 @@
                 <button class="btn">Answer 4</button>
             </div>
         </section>
+
+        <!-- Start, Next & Restart Controls here -->
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
 
+        <!-- Feedback for each answer -->
+        <div id="feedback" class="feedback hide"></div>
+
+        <!-- Live Scoreboard -->
+        <div id="summary" class="summary hide">
+            <p><strong>Score:</strong><span id="live-score">0</span></p>
+            <p><strong>Remaining Questions:</strong> <span id="remaining-questions">0</span></p>
+        </div>
+
+        <div id="progress-wrapper" class="progress-bar-wrapper hide">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Final Scoreboard here -->
         <div class="score hide">
             <span id="right-answers"></span>
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="app.js"></script>
 </body>
 
